@@ -1,0 +1,19 @@
+{
+  "name": "meanapp",
+  "version": "1.0.0",
+  "description": "App with MEAN stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https:/github.com/meanApp"
+  },
+  "author": "Max Hallsett",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "jade": "^1.11.0"
+  }
+}
