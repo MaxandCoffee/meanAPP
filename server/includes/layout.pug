@@ -8,6 +8,7 @@ html
         link(rel="stylesheet", href="/css/site.css")
         link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
         link(rel="stylesheet", href="/vendor/toastr/toastr.css")
-    body
+        base(href="/")
+    body(ng-app='meanapp')
         block main-content
         include scripts.pug
