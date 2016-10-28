@@ -1,0 +1,29 @@
+body {
+  padding-top: 61px;
+}
+.navbar-header a.navbar-brand {
+  margin: 0 0 -15px 0;
+}
+.navbar-header a.navbar-brand h6 {
+  color: #ccc;
+}
+.nav>li>a {
+  display: inline-block;
+}
+footer {
+  padding: 0 15px;
+}
+footer p {
+  border-top: 1px solid #d7e0e2;
+}
+.navbar-form {
+  margin-top: -50px;
+  position: relative;
+  z-index: 2;
+}
+.navbar-form .form-group {
+  margin-left: 10px;
+}
+.navbar-form button {
+  margin-left: 10px;
+}

@@ -37,23 +37,14 @@ db.once('open', function callback(){
     console.log('meanapp db opened');
 });
 
-var messageSchema = mongoose.Schema({message: String});
-var Message = mongoose.model('Message', messageSchema);
-var mongoMessage;
-Message.findOne().exec(function (err, messageDoc) {
-    mongoMessage = messageDoc.message;
-})
-
-app.get('/partials/:partialPath', function(req, res) {
-    res.render('partials/' + req.params.partialPath);
+app.get('/partials/*', function(req, res) {
+    res.render('../../public/app/' + req.params[0]);
 });
 
 app.get('*', function(req, res) {
-    res.render('index', {
-        mongoMessage: mongoMessage
-    });
+    res.render('index');
 });
 
-var port = 3030;
+var port = process.env.PORT = process.env.PORT || 3030;
 app.listen(port);
 console.log('Listening on port ' + port + '...');
