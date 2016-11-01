@@ -27,3 +27,9 @@ footer p {
 .navbar-form button {
   margin-left: 10px;
 }
+.toast-top-right {
+  margin-top: 70px;
+}
+.toast-success {
+  background: #13987e;
+}

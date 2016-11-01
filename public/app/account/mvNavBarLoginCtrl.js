@@ -1,13 +1,14 @@
 (function () {
-    angular.module('meanapp').controller('mvNavBarLoginCtrl', function($scope, $http){
-        $scope.signin = function(username, password) {
-            $http.post('/login', {username: username, password:password}).then(function (response) {
-                if(response.data.success){
-                    console.log('logged in!');
-                } else{
-                    console.log('failed to log in!');
+    angular.module('meanapp').controller('mvNavBarLoginCtrl', function ($scope, $http, mvIdentity, mvNote, mvAuth) {
+        $scope.identity = mvIdentity;
+        $scope.signin = function (username, password) {
+            mvAuth.authenticateUser(username, password).then(function (success) {
+                if (success) {
+                    mvNote.notify('You have successfully signed in');
+                } else {
+                    mvNote.notify('Username/Password combination is incorrect');
                 }
-            })
+            });
         }
-    })
+    });
 })();

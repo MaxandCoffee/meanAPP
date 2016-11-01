@@ -1,25 +1,15 @@
-module.exports = function (app) {
-    app.get('/partials/*', function (req, res) {
-        res.render('../../public/app/' + req.params[0]);
-    });
+(function () {
+    var auth = require('./auth');
 
-    app.post('/login', function (req, res, next) {
-        var auth = passport.authenticate('local', function (err, user) {
-            if (err) {
-                return next(err);
-            }
-            if (!user) {
-                res.send({success: false})
-            }
-            req.logIn(user, function (err) {
-                if(err){return next (err);}
-                res.send({surcess:true, user: user});
-            })
-        })
-        auth(req, res, next);
-    })
+    module.exports = function (app) {
+        app.get('/partials/*', function (req, res) {
+            res.render('../../public/app/' + req.params[0]);
+        });
 
-    app.get('*', function (req, res) {
-        res.render('index');
-    });
-}
+        app.post('/login', auth.authenticate);
+
+        app.get('*', function (req, res) {
+            res.render('index');
+        });
+    }
+})();
