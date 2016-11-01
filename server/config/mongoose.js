@@ -15,7 +15,8 @@
             lastName: String,
             username: String,
             salt: String,
-            hashed_pwd: String
+            hashed_pwd: String,
+            roles: [String]
         });
 
         userSchema.methods= {
@@ -30,10 +31,10 @@
                 var salt, hash;
                 salt = createSalt();
                 hash = hashPwd(salt, 'joe');
-                User.create({firstName: 'Joe', lastName: 'Smith', username: 'joe', salt: salt, hashed_pwd: hash});
+                User.create({firstName: 'Joe', lastName: 'Smith', username: 'joe', salt: salt, hashed_pwd: hash, roles: ['admin']});
                 salt = createSalt();
                 hash = hashPwd(salt, 'jane');
-                User.create({firstName: 'Jane', lastName: 'Smith', username: 'jane', salt: salt, hashed_pwd: hash});
+                User.create({firstName: 'Jane', lastName: 'Smith', username: 'jane', salt: salt, hashed_pwd: hash, roles: []});
                 salt = createSalt();
                 hash = hashPwd(salt, 'mary');
                 User.create({firstName: 'Mary', lastName: 'Moe', username: 'mary', salt: salt, hashed_pwd: hash});

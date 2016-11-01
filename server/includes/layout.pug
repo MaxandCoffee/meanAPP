@@ -10,5 +10,6 @@ html
         link(rel="stylesheet", href="/vendor/toastr/toastr.css")
         base(href="/")
     body(ng-app='meanapp')
+        include currentUser.pug
         block main-content
         include scripts.pug
