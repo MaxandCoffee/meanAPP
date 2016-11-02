@@ -23,8 +23,8 @@ angular.module('meanapp').factory('mvAuth', function ($http, mvIdentity, $q, mvU
             clone.$update().then(function(){
                 mvIdentity.currentUser = clone;
                 dfd.resolve();
-            }, function (respons) {
-                dfd.reject(respons.data.reason);
+            }, function (response) {
+                dfd.reject(response.data.reason);
             });
 
             return dfd.promise;
