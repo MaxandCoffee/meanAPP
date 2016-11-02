@@ -29,6 +29,10 @@ angular.module('meanapp').config(function($routeProvider, $locationProvider) {
             controller: 'mvProfileCtrl',
             resolve: routeRoleChecks.user
         })
+        .when('/courses', {
+            templateUrl: '/partials/courses/courseList',
+            controller: 'mvCourseListCtrl',
+        })
 
 });
 

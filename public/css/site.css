@@ -25,6 +25,9 @@ footer p {
 .navbar button {
   margin-left: 10px;
 }
+.nav>li {
+  float: left;
+}
 .toast-top-right {
   margin-top: 70px;
 }
