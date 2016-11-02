@@ -33,7 +33,10 @@ angular.module('meanapp').config(function($routeProvider, $locationProvider) {
             templateUrl: '/partials/courses/courseList',
             controller: 'mvCourseListCtrl',
         })
-
+        .when('/courses/:id', {
+            templateUrl: '/partials/courses/courseDetail',
+            controller: 'mvCourseDetailCtrl',
+        })
 });
 
 angular.module('meanapp').run(function($rootScope, $location) {
