@@ -10,5 +10,4 @@ exports.getCourseById = function (req, res) {
     Course.findOne({_id:req.params.is}).exec(function(err, course){
         res.send(course);
     })
-    
 };
